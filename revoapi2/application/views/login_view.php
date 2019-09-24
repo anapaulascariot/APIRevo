@@ -3,6 +3,8 @@
 <head>  
     <meta charset="utf-8">  
     <title>Página de login</title>  
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css"></link>
 </head>  
 <body>  
     <h1>Login</h1>  
