@@ -1,10 +1,13 @@
     <!DOCTYPE html>  
     <html>  
-    <head>  
-        <title></title>  
+    <head> 
+        <meta charset="utf-8">
+        <title>página de pregunta</title>
+        <script type="text/javascript"  src="./js/bootstrap.js"></script> 
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.css"></link> 
     </head>  
     <body>  
-        <h1>Bienvenido. Has ingresado con éxito</h1>  
+        <h1>Bienvenido. PREGUNTA</h1>  
       
         <?php  
         echo "<pre>";  
