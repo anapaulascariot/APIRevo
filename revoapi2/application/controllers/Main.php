@@ -26,7 +26,11 @@ class Main extends CI_Controller {
         } else {  
             redirect('Main/invalid');  
         }  
-    }  
+    } 
+    public function charts1()  
+    {  
+        $this->load->view('charts1');  
+    }
   
     public function invalid()  
     {  
