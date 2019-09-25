@@ -1,5 +1,5 @@
-    <!DOCTYPE html>  
-    <html lang="en">  
+<!DOCTYPE html>  
+<html lang="en">  
     <head>  
         <meta charset="utf-8">  
         <title>Página de login</title>  
@@ -10,49 +10,56 @@
     </head>  
     <body>  
         <div class="container">
-                <div class="wrapper fadeInDown">
+            <div class="wrapper fadeInDown">
                 <div id="formContent">
 
                 <div class="fadeIn first">
+                    </p>
                     <h1>Login</h1>
                 </div>
+
+                <form>
                       
                     <?php  
-                  
                     echo form_open('Main/login_action');  
                   
                     echo validation_errors();  
                     ?>
-                    <label for="fadeIn second">Usuario:</label>
+                    <div type="text" class="fadeIn second">
                     <?php
-                    //echo "<p>Usuario: ";
+                        $opts = 'placeholder="Usuario"';
+                        echo form_input('username', $this->input->post('username'), $opts);  
+                    ?>
+                    </div>
 
-                    echo form_input('username', $this->input->post('username'));  
+                    <div type="text" class="fadeIn third">
+                    <?php
+                        $opts = 'placeholder="Contraseña"';
+                        echo form_input('username', $this->input->post('username'), $opts);  
+                    ?>
+                    </div>
 
-                     echo "</p>";  
+                    <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
+                    <input type="submit" id="login_submit" class="fadeIn fourth" value="Login">
+                    <?php
+
+                    //echo form_input('username', $this->input->post('username'));  
                   
-                    echo "<p>Contraseña: ";  
-                        echo form_password('password');  
-                    echo "</p>";  
+                    //echo form_password('password');  
                   
-                    echo "</p>";  
-                    echo form_submit('login_submit', 'Login');  
-                    echo "</p>";  
+                    //echo form_submit('login_submit', 'Login');  
                   
                     echo form_close();  
                   
                     ?>  
-                    </div>
-              
+                </form>
 
                  <div id="formFooter">   
-                <a class="underlineHover" href='<?php echo base_url()."index.php/Main/signin"; ?>'>Sign In</a> 
+                    <a class="underlineHover" href='<?php echo base_url()."index.php/Main/signin"; ?>'>Sign In</a>
                 </div>
 
-
                 </div>
-                </div>
-            
+            </div>
         </div>    
     </body>  
-    </html>    
+</html>    
