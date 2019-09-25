@@ -1,65 +1,48 @@
+
 <!DOCTYPE html>  
 <html lang="en">  
-    <head>  
-        <meta charset="utf-8">  
-        <title>Página de login</title>  
-        <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"></link>
-        <link rel="stylesheet" type="text/css" href="../css/formato.css"></link>
-    </head>  
-    <body>  
-        <div class="container">
-            <div class="wrapper fadeInDown">
-                <div id="formContent">
-
+<head>  
+    <meta charset="utf-8">  
+    <title>Página de login</title>  
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"></link>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="../css/formato.css"></link>
+</head>  
+<body>  
+    <div class="container">
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
                 <div class="fadeIn first">
-                    </p>
+                    <img src="../img/logo-UV2.jpg" id="icon" alt="User Icon" />
                     <h1>Login</h1>
                 </div>
 
-                <form>
-                      
-                    <?php  
-                    echo form_open('Main/login_action');  
-                  
-                    echo validation_errors();  
-                    ?>
-                    <div type="text" class="fadeIn second">
-                    <?php
-                        $opts = 'placeholder="Usuario"';
-                        echo form_input('username', $this->input->post('username'), $opts);  
-                    ?>
-                    </div>
+                <?php  
 
-                    <div type="text" class="fadeIn third">
-                    <?php
-                        $opts = 'placeholder="Contraseña"';
-                        echo form_input('username', $this->input->post('username'), $opts);  
-                    ?>
-                    </div>
+                echo form_open('Main/login_action');  
 
-                    <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-                    <input type="submit" id="login_submit" class="fadeIn fourth" value="Login">
-                    <?php
+                echo validation_errors();  
 
-                    //echo form_input('username', $this->input->post('username'));  
-                  
-                    //echo form_password('password');  
-                  
-                    //echo form_submit('login_submit', 'Login');  
-                  
-                    echo form_close();  
-                  
-                    ?>  
-                </form>
+                $opts_user =  array('placeholder' => 'Usuario', 'class' => 'fadeIn second', 'type' => 'text');
+                echo form_input('username', $this->input->post('username'), $opts_user);  
 
-                 <div id="formFooter">   
-                    <a class="underlineHover" href='<?php echo base_url()."index.php/Main/signin"; ?>'>Sign In</a>
-                </div>
+                //echo "<p>Contraseña: ";  
+                $opts_pass = array('placeholder'=>'Contraseña', 'class'=>'fadeIn third', 'type' => 'password');
+                echo form_password('password', '', $opts_pass);  
 
+                echo "</p>";  
+                echo form_submit('login_submit', 'Login', 'class=fadeIn Fourth');  
+                //echo "</p>";  
+
+                echo form_close();  
+
+                ?>  
+
+                <div id="formFooter">   
+                    <a class="underlineHover" href='<?php echo base_url()."index.php/Main/signin"; ?>'>Sign In</a>  
                 </div>
             </div>
-        </div>    
-    </body>  
+        </div>     
+</body>  
 </html>    
