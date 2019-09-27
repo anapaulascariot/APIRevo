@@ -10,7 +10,8 @@
           ['Calificación', 'Porcenaje'],
           ["Bueno", 6],
           ["regular", 20],
-          ["Malo", 12]
+          ["Malo", 12],
+          ["mñe", 20]
         ]);
 
         var options = {

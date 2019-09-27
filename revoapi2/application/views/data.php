@@ -1,60 +1,80 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="utf-8">  
-    <title>Página Cuestionario</title>  
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!DOCTYPE html>  
+    <html>  
+    <head>  
+        <title></title>  
+    </head>  
+    <body>  
+        <h1>Bienvenido. Has ingresado con éxito</h1>  
+      
+        <?php  
+        echo "<pre>";  
+        echo print_r($this->session->all_userdata());  
+        echo "</pre>";  
+        ?>  
+      
+        <a href='<?php echo base_url()."index.php/Main/logout"; ?>'>Salir</a>  
+        <a href='<?php echo base_url()."index.php/Main/charts1"; ?>'>Graficos</a>  
+         <a href='<?php echo base_url()."index.php/Main/formulario"; ?>'>Formulario</a>  
+      
+    </body>  
+    </html>  
 
-</head>  
-<body> 
-    <div class="container">
-        <div class="text-center">
-            <div class="jumbotron">
-                <h1> Bienvenido. Responde la siguiente pregunta</h1>
-            </div>
-            <div class="card bg-info text-white">
-                <div class="card-body">
-                    <div class="col-md-12 col-md-offset-7">
-                        <div class="panel panel-default">
-                            <div class="text-center">
-                                <div id="formContent">
-                                   <legend class="col-sm-12">¿Cómo calificarías el clima en Xalapa Veracruz?</legend>   
-                                   <p></p>
-                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="gridRadios1">
-                                        Bueno
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" checked>
-                                    <label class="form-check-label" for="gridRadios2">
-                                        Regular
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" checked>
-                                    <label class="form-check-label" for="gridRadios3">
-                                        Malo
-                                    </label>
-                                </div>
-                                <div>
-                                    <div class="col-md-12 col-md-offset-7">
-                                        <button type="btn-success" class="btn btn-success" >Votar</button>
-                                    </div>
 
-                                    <div class="col-md-1 col-md-offset-7">
-                                        <button type="button" class="btn btn-danger" href='<?php echo base_url()."index.php/Main/logout"; ?>'>Salir</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                   </div>
-               </div> 
-           </body>
-        </div>  
-    </div>
-</html>  
+    ////
+
+        <div class="pull-left">
+
+            <h2>Bienvenido</h2>
+
+        </div>
+
+
+
+<table class="table table-bordered">
+
+
+  <thead>
+
+      <tr>
+          <th>Número</th>
+
+          <th>Pregunta</th>
+
+           <th>Enlace</th>
+
+      </tr>
+
+  </thead>
+
+
+  <tbody>
+
+   <?php foreach ($data as $item) { ?>      
+
+      <tr>
+          <td><?php echo $item->idpregunta; ?></td>
+          <td><?php echo $item->pregunta; ?></td>    
+
+      <td>
+
+
+
+
+        
+
+          
+
+          <a class="btn btn-info" href="<?php echo base_url('/index.php/Main/pregunta/'.$item->idpregunta) ?>"> Mostrar</a>
+
+        </form>
+
+      </td>     
+
+      </tr>
+
+      <?php } ?>
+
+  </tbody>
+
+
+</table>
