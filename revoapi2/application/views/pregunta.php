@@ -4,7 +4,8 @@
 
         <div class="pull-left">
 
-            <h2> Mostrar elemento <?php echo $preguntas->idpregunta?></h2>
+            <h2> Mostrar elemento <?php echo $preguntayrespuesta[0];?></h2>
+            <?php echo print_r($preguntayrespuesta);  ?>
 
         </div>
 
@@ -25,14 +26,9 @@
   <thead>
 
       <tr>
-          <th>Número</th>
+          <th>Id respuesta</th>
 
-          <th>Respuesta</th>
-
-           <th>Votos</th>
-
-           <th>Idpregunta</th>
-
+          <th>Respuesta</th
       </tr>
 
   </thead>
@@ -41,28 +37,26 @@
   <tbody>
 
    <?php 
-    echo $preguntas->pregunta;
-   foreach ($datos as $item) {
-   echo "<tr>"; 
    
-   foreach ($item as $basurilla) {
-     //$arreglo[]=$basurilla;
+    echo $preguntayrespuesta[1];
+      echo "<tr>"; 
+   $banderaTr=0;
+   for($i=2;$i<count($preguntayrespuesta);$i++){
+  
       echo "<td>";
-      echo $basurilla;
-       echo "</td>";
-
+      echo $preguntayrespuesta[$i];
+      $banderaTr++; 
+       if ($banderaTr==2){
+       echo "</tr>";
+       $banderaTr=0;
+     }
     } 
     
-    }
+    
     ?>      
  
   <!--         <td><?php echo $item->idpregunta; ?></td>
           <td><?php echo $item->pregunta; ?></td>        -->
-
-      
-
-      <?php ?>
-      </tr>
   </tbody>
 
 

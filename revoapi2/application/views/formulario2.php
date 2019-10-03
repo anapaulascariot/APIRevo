@@ -22,34 +22,26 @@
                         <div class="panel panel-default">
                             <div class="text-center">
                                 <div id="formContent">
-
-                                   <legend class="col-sm-12"><?php echo $preguntayrespuesta[1];?></legend> 
-
+                                   <legend class="col-sm-12">¿Cómo calificarías el clima en Xalapa Veracruz?</legend>   
                                    <p></p>
-                                <?php 
-                                 //En este tramo van las respuestas
-                                 $mas2=0;
-                                 for($i=1;$i<(count($preguntayrespuesta)-1);$i++){
-                                      
-                                  echo "<div class='form-check'>";
-                                  echo "<input class='form-check-input' type='radio'";
-                                  //se especifica que radiobutton es
-                                  echo "name='gridRadios' id='gridRadios".$i."'";
-                                  echo "value='"; 
-                                  echo $preguntayrespuesta[($i+1)];//la id de la respuesta para poder actualizarla
-                                  echo "'";
-                                   
-                                 echo " checked>";
-                                  
-                                  echo $preguntayrespuesta[($i+2)]; //lo que verá el usuario
-                                echo "</label>";
-                                echo "</div>";
-                               $i=$i+1;
-                                 }
-
-                                ?>  
-                                
-                                
+                                   <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="gridRadios1">
+                                        Bueno
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" checked>
+                                    <label class="form-check-label" for="gridRadios2">
+                                        Regular
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" checked>
+                                    <label class="form-check-label" for="gridRadios3">
+                                        Malo
+                                    </label>
+                                </div>
                                 <p></p>
                                 <div>
                                     <div class="col-md-12 col-md-offset-7">
@@ -57,9 +49,7 @@
                                     </div>
 
                                     <div class="col-md-1 col-md-offset-7">
-                                    <button type="button" type="button" class="btn btn-danger" onclick="window.location.href='<?php echo base_url()."index.php/Main/data";?>'">Salir</button>
-
-                                    <p></p>
+                                        <button type="button" class="btn btn-danger" href='<?php echo base_url()."index.php/Main/logout"; ?>'>Salir</button>
                                     </div>
                                 </div>
                             </div>

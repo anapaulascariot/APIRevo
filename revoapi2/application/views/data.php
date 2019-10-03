@@ -64,7 +64,7 @@
 
           
 
-          <a class="btn btn-info" href="<?php echo base_url('/index.php/Main/pregunta/'.$item->idpregunta) ?>"> Mostrar</a>
+          <a class="btn btn-info" href="<?php echo base_url('/index.php/Main/formulario/'.$item->idpregunta) ?>"> Mostrar</a>
 
         </form>
 

@@ -35,12 +35,14 @@ class PreguntasModel extends CI_Model{
     	
         //$query=$this->db->get_where('pregunta_respuesta', array('idpregunta' => $id))->row();
 
-    	$this->db->select('*');
+    	$this->db->select('idrespuesta, respuesta');
     	//$this->db->from('pregunta_respuesta');
     	$this->db->where('idpregunta='.$id);	
     	$query= $this->db->get("respuestas");	
         return $query->result();
     	}
+
+
 
        public function find_pregunta($id)
 
@@ -48,8 +50,16 @@ class PreguntasModel extends CI_Model{
 
     	//$this->db->select('SELECT * from pregunta_respuesta where idpregunta='.$id, FALSE);
     	
-        return $this->db->get_where('preguntas', array('idpregunta' => $id))->row();
+      return $this->db->get_where('preguntas', array('idpregunta' => $id))->row();
     	}
+
+      public function get_pregunta($id){
+        $this->db->select('idpregunta, pregunta');
+        //$this->db->from('pregunta_respuesta');
+        $this->db->where('idpregunta='.$id);  
+        $query= $this->db->get("preguntas"); 
+        return $query->result();
+      }
 }   	
 
 

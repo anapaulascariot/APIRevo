@@ -119,10 +119,7 @@ class Main extends CI_Controller {
         redirect('Main/login');  
     }  
 
-     public function formulario()  
-    {  
-         $this->load->view('formulario');  
-    }  
+
 
 
     //las preguntas
@@ -143,27 +140,60 @@ class Main extends CI_Controller {
 
    }
 
-       public function pregunta($id)
+    
 
-   {
+    public function pregunta($id)
 
-     //$pregunta =$this->preguntas->find_pregunta($id);   
-     $datos = $this->preguntas->find_respuesta($id);
-     $preguntas = $this->preguntas->find_pregunta($id);
-      //para generar la vista de forma dinámica
-      //$campos= $this->campos();
+    {
+
+     
+     $respuestas = $this->preguntas->find_respuesta($id);
+     $lapregunta = $this->preguntas->get_pregunta($id);
+
+     //Como la query devuelve mucha basura, esto lo que hace es acomodarlo en un solo array que va ser fácil de procesar cuando se mande a la vista
+     $preguntayrespuesta=$this->acomoda_pregunta($lapregunta,$respuestas);
 
     //  $this->load->view('theme/header');
-
-      $this->load->view('pregunta', array ('datos'=>$datos, 'preguntas'=>$preguntas));
+     $datos['preguntayrespuesta']=$preguntayrespuesta;
+      $this->load->view('pregunta', $datos);
 
     //  $this->load->view('theme/footer');
 
    }
 
+ 
+
     public function charts1()  
     {  
         $this->load->view('charts1');  
+    }
+
+
+     public function formulario($id)  
+    {  
+        $respuestas = $this->preguntas->find_respuesta($id);
+        $lapregunta = $this->preguntas->get_pregunta($id);
+        $preguntayrespuesta=$this->acomoda_pregunta($lapregunta,$respuestas);
+        $datos['preguntayrespuesta']=$preguntayrespuesta;
+        $this->load->view('formulario',$datos);  
+    } 
+
+    public function acomoda_pregunta($lapregunta, $respuestas){
+        $arreglofeo= array();
+
+        //teoricamente solo obtiene la id de la pregunta, 
+        //la pregunta y la id del usuario    
+        foreach ($lapregunta as $key){
+            $arreglofeo[]=$key->idpregunta;
+            $arreglofeo[]=$key->pregunta;
+        }
+        foreach ($respuestas as $key) {
+            $arreglofeo[]=$key->idrespuesta;
+            $arreglofeo[]=$key->respuesta;
+        }
+        
+        return $arreglofeo;
+
     }
   
   

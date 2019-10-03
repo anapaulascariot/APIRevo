@@ -3,6 +3,7 @@
 class Login_model extends CI_Model {  
   
     public function log_in_correctly() { 
+        $bandera= false;
     	    $this->db->where('nombre', $this->input->post('username'));  
 
     	    $this->db->where('password', $this->input->post('password'));  
@@ -10,10 +11,12 @@ class Login_model extends CI_Model {
   
         if ($query->num_rows() == 1)  
         {  
-            return true;  
+            $bandera = true;  
         } else {  
-            return false;  
+            $bandera = false;  
         }  
+
+        return $bandera;
   
     }  
   
