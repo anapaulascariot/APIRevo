@@ -195,6 +195,53 @@ class Main extends CI_Controller {
         return $arreglofeo;
 
     }
+
+     public function votar()
+
+    {
+
+        //$this->form_validation->set_rules('gridRadios', 'required');
+        /*
+        if ($this->form_validation->run() == FALSE){
+
+            $this->session->set_flashdata('errors', validation_errors());
+
+            redirect(base_url('index.php/Main/formulario/'.$id));
+
+        }else{ }//Validación, dentro del else se pone la ejecución si pasa la validación
+        */
+          $this->preguntas->update_respuesta();
+
+          redirect(base_url('index.php/Main/data'));
+
+        
+
+   }
+
+   public function alta_usuario()
+
+   {
+        /* 
+        $this->form_validation->set_rules('email', 'password', 'required');
+
+        
+       if ($this->form_validation->run() == FALSE){
+
+            $this->session->set_flashdata('errors', validation_errors());
+
+            redirect(base_url('itemCRUD/create'));
+
+        }else{}//Aquí va la validación interna
+        */
+
+           $this->preguntas->insertar_usuario();
+
+           redirect(base_url('index.php/Main/'));
+
+        
+
+    }
+
   
   
 }  

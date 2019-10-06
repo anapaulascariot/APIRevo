@@ -21,6 +21,7 @@
                     <div class="col-md-12 col-md-offset-7">
                         <div class="panel panel-default">
                             <div class="text-center">
+                                <form method="post" action="<?php echo base_url('index.php/Main/votar');?>">
                                 <div id="formContent">
 
                                    <legend class="col-sm-12"><?php echo $preguntayrespuesta[1];?></legend> 
@@ -62,6 +63,7 @@
                                     <p></p>
                                     </div>
                                 </div>
+                             </form>
                             </div>
                         </div>
                    </div>

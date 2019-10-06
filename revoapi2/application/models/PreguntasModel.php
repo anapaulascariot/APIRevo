@@ -60,6 +60,29 @@ class PreguntasModel extends CI_Model{
         $query= $this->db->get("preguntas"); 
         return $query->result();
       }
+
+      public function update_respuesta()//solo toma el valor post, que es la id de la respuesta y le agrega un +1 al voto
+
+      {
+
+       $datos= $this->input->post('gridRadios');
+        
+            
+            $this->db->set('voto', 'voto+1', FALSE);
+            $this->db->where('idrespuesta', $datos);
+            return $this->db->update('respuestas'); // //UPDATE respuestas SET respuestas.voto = respuestas.voto + 1 WHERE idrespuesta = 1         
+      }
+
+      public function insertar_usuario()
+    {
+        $datos= array(
+        'nombre' =>$this->input->post('email'),
+        'password' =>$this->input->post('password')
+      );//fin del array
+
+         //$this->db->set($datos)->get_compiled_insert('tablatest1');
+        return $this->db->insert('usuario', $datos);
+    }
 }   	
 
 

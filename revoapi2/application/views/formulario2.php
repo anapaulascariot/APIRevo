@@ -21,10 +21,12 @@
                     <div class="col-md-12 col-md-offset-7">
                         <div class="panel panel-default">
                             <div class="text-center">
+                                
                                 <div id="formContent">
                                    <legend class="col-sm-12">¿Cómo calificarías el clima en Xalapa Veracruz?</legend>   
                                    <p></p>
-                                   <div class="form-check">
+
+                                <div class="form-check">
                                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
                                     <label class="form-check-label" for="gridRadios1">
                                         Bueno

@@ -13,6 +13,7 @@
     <div class="container">
         <div class="wrapper fadeInDown">
             <div id="formContent">
+                <form method="post" action="<?php echo base_url('index.php/Main/alta_usuario');?>">
                 <div class="fadeIn first">
                     </p>
                     <h1>Sign In</h1>
@@ -47,7 +48,7 @@
                 echo form_close();  
 
                 ?>  
-
+            </form>
             </div>
         </div>
     </div>  
