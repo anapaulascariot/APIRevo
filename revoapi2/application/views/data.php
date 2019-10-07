@@ -13,7 +13,7 @@
         ?>  
       
         <a href='<?php echo base_url()."index.php/Main/logout"; ?>'>Salir</a>  
-        <a href='<?php echo base_url()."index.php/Main/charts1"; ?>'>Graficos</a>  
+        <a href='<?php echo base_url()."index.php/Main/charts"; ?>'>Graficos</a>  
          <a href='<?php echo base_url()."index.php/Main/formulario"; ?>'>Formulario</a>  
       
     </body>  

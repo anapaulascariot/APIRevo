@@ -163,9 +163,10 @@ class Main extends CI_Controller {
 
  
 
-    public function charts1()  
+    public function charts($id)//la id es de la pregunta, así obtiene todas las respuestas asociadas  
     {  
-        $this->load->view('charts1');  
+        $datos=$this->preguntas->get_votos($id);
+        $this->load->view('charts');  
     }
 
 

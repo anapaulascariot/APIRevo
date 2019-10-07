@@ -18,20 +18,20 @@
            ?>
           ["Bueno", 6],
           ["regular", 20],
-          ["Malo", 12]
-
+          ["Malo", 12],
+          ["mñe", 20]
         ]);
 
         var options = {
-          title: 'Chess opening moves',
+          title: 'Pregunta: <?php //La pregunta ?>',
           width: 900,
           legend: { position: 'none' },
-          chart: { title: 'Chess opening moves',
-                   subtitle: 'popularity by percentage' },
+          chart: { title: 'Pregunta: <?php //La pregunta otra vez ?>',
+                   subtitle: '' },
           bars: 'horizontal', // Required for Material Bar Charts.
           axes: {
             x: {
-              0: { side: 'top', label: 'Percentage'} // Top x-axis.
+              0: { side: 'top', label: 'Porcentaje'} // Top x-axis.
             }
           },
           bar: { groupWidth: "90%" }
