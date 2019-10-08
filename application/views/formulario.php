@@ -59,7 +59,7 @@
                                     </div>
 
                                     <div class="col-md-1 col-md-offset-7">
-                                    <button type="button" type="button" class="btn btn-danger" onclick="window.location.href='<?php echo base_url()."index.php/Main/data";?>'">Salir</button>
+                                    <button type="button" type="button" class="btn btn-danger" onclick="window.location.href='<?php echo base_url("index.php/Main/");?>'">Salir</button>
 
                                     <p></p>
                                     </div>

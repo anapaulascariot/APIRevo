@@ -1,14 +1,4 @@
 
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="utf-8">  
-    <title>Página de login</title>  
-    <script type="text/javascript" src="../js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://localhost/apirevo/css/bootstrap.css"></link>
-    <link rel="stylesheet" type="text/css" href="http://localhost/apirevo/css/bootstrap.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="http://localhost/apirevo/css/formato.css"></link>
-</head>  
 <body>  
     <div class="container">
         <div class="wrapper fadeInDown">
@@ -44,5 +34,3 @@
                 </div>
             </div>
         </div>     
-</body>  
-</html>    

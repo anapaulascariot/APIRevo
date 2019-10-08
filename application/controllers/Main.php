@@ -29,7 +29,10 @@ class Main extends CI_Controller {
   
     public function login()  
     {  
-        $this->load->view('login_view');  
+        $this->load->view('navbar/head');
+        $this->load->view('login_view'); 
+        $this->load->view('navbar/foot');
+
     }  
   
     public function signin()  
@@ -188,6 +191,7 @@ class Main extends CI_Controller {
             $lapregunta = $this->preguntas->get_pregunta($id);
             $preguntayrespuesta=$this->acomoda_pregunta($lapregunta,$respuestas);
             $datos['preguntayrespuesta']=$preguntayrespuesta;
+            //$this->load->view('navbar/head');
             $this->load->view('formulario',$datos);  
         } else {  
             redirect('Main/invalid');  
