@@ -14,7 +14,7 @@
         <div class="wrapper fadeInDown">
             <div id="formContent">
                 <div class="fadeIn first">
-                    <img src="http://localhost/revoapi2/img/logo-UV2.jpg" id="icon" alt="User Icon" />
+                    <img src="http://localhost/apirevo/img/logo-UV2.jpg" id="icon" alt="User Icon" />
                     <h1>Login</h1>
                 </div>
 
