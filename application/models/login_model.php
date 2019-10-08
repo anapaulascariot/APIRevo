@@ -4,9 +4,11 @@ class Login_model extends CI_Model {
   
     public function log_in_correctly() { 
         $bandera= false;
-    	    $this->db->where('nombre', $this->input->post('username'));  
+        $usuario=$this->input->post('username');//por validar
+        $contra=$this->input->post('password');
+    	    $this->db->where('nombre',$usuario );  
 
-    	    $this->db->where('password', $this->input->post('password'));  
+    	    $this->db->where('password', $contra);  
         	$query = $this->db->get('usuario');  
   
         if ($query->num_rows() == 1)  
