@@ -3,7 +3,7 @@
 <html lang="en">  
 <head>  
     <meta charset="utf-8">  
-    <title>Sign Up</title>  
+    <title>Nuevo Usuario</title>  
     <script type="text/javascript" src="http://localhost/revoapi2/js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="http://localhost/revoapi2/css/bootstrap.css"></link>
     <link rel="stylesheet" type="text/css" href="http://localhost/revoapi2/css/bootstrap.min.css"></link>
@@ -16,7 +16,7 @@
                 <form method="post" action="<?php echo base_url('index.php/Main/alta_usuario');?>">
                 <div class="fadeIn first">
                     </p>
-                    <h1>Sign In</h1>
+                    <h1>Nuevo Usuario</h1>
                     </p>
                 </div>
 
@@ -42,7 +42,7 @@
                 echo "</p>";  
 
                 echo "<p>";  
-                echo form_submit('signin_submit', 'Sign In', 'class=fadeIn Fifth');  
+                echo form_submit('signin_submit', 'Registrar', 'class=fadeIn Fifth');  
                 echo "</p>";  
 
                 echo form_close();  
