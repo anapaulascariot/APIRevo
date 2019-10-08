@@ -69,7 +69,7 @@ class Main extends CI_Controller {
                 'currently_logged_in' => 1  
                 );    
                     $this->session->set_userdata($data);  
-                redirect('Main/data');  
+                redirect('Main/formulario');  
         }   
         else {  
             $this->load->view('login_view');  
@@ -177,13 +177,22 @@ class Main extends CI_Controller {
     }
 
 
-     public function formulario($id)  
+     public function formulario()  
     {  
-        $respuestas = $this->preguntas->find_respuesta($id);
-        $lapregunta = $this->preguntas->get_pregunta($id);
-        $preguntayrespuesta=$this->acomoda_pregunta($lapregunta,$respuestas);
-        $datos['preguntayrespuesta']=$preguntayrespuesta;
-        $this->load->view('formulario',$datos);  
+      //Generalmente recibiría una id como argumento para mostrar la pregunta
+      //como se ha descartado, la id se maneja en una variable interna
+        $id=3;
+          if ($this->session->userdata('currently_logged_in'))   
+        {
+            $respuestas = $this->preguntas->find_respuesta($id);
+            $lapregunta = $this->preguntas->get_pregunta($id);
+            $preguntayrespuesta=$this->acomoda_pregunta($lapregunta,$respuestas);
+            $datos['preguntayrespuesta']=$preguntayrespuesta;
+            $this->load->view('formulario',$datos);  
+        } else {  
+            redirect('Main/invalid');  
+        }  
+        
     } 
 
     public function acomoda_pregunta($lapregunta, $respuestas){
