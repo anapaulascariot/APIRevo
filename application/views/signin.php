@@ -4,10 +4,10 @@
 <head>  
     <meta charset="utf-8">  
     <title>Nuevo Usuario</title>  
-    <script type="text/javascript" src="http://localhost/revoapi2/js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://localhost/revoapi2/css/bootstrap.css"></link>
-    <link rel="stylesheet" type="text/css" href="http://localhost/revoapi2/css/bootstrap.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="http://localhost/revoapi2/css/formato.css"></link>
+    <script type="text/javascript" src="http://localhost/apirevo/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost/apirevo/css/bootstrap.css"></link>
+    <link rel="stylesheet" type="text/css" href="http://localhost/apirevo/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="http://localhost/apirevo/css/formato.css"></link>
 </head>  
 <body>  
     <div class="container">
