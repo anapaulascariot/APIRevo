@@ -165,8 +165,15 @@ class Main extends CI_Controller {
 
     public function charts($id)//la id es de la pregunta, así obtiene todas las respuestas asociadas  
     {  
-        $datos=$this->preguntas->get_votos($id);
-        $this->load->view('charts');  
+        $datos=$this->preguntas->get_votos($id); //obtiene los datos de los votos y las preguntas
+        $data['datos']=$datos;
+        $this->load->view('charts', $data);  
+    }
+
+    public function charts1()//la id es de la pregunta, así obtiene todas las respuestas asociadas  
+    {  
+        //$datos=$this->preguntas->get_votos($id); //obtiene los datos de los votos y las preguntas
+        $this->load->view('charts1');  
     }
 
 
@@ -197,7 +204,7 @@ class Main extends CI_Controller {
 
     }
 
-     public function votar()
+     public function votar($id)//la id realmente no hace nada aquí excepto para mostrar la gráfica al final
 
     {
 
@@ -213,7 +220,7 @@ class Main extends CI_Controller {
         */
           $this->preguntas->update_respuesta();
 
-          redirect(base_url('index.php/Main/data'));
+          redirect(base_url('index.php/Main/charts/'.$id));
 
         
 

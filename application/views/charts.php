@@ -4,29 +4,25 @@
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawStuff);
-
+      <?php
+      //print_r($datos)?>
       function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
           ['Calificación', 'Porcentaje'],
-          <?php //Cada respuesta
-          /*
-          con el formato siguiente
-          ["respuesta 1", voto],
-          ["respuesta n", voto]
-          */
+          <?php 
+          foreach ($datos as $key) {
+            echo '["'.$key->respuesta.'", '.$key->voto."],";
+            echo " ";
 
-           ?>
-          ["Bueno", 6],
-          ["regular", 20],
-          ["Malo", 12],
-          ["mñe", 20]
-        ]);
+            
+          }
+          ?>]);
 
         var options = {
-          title: 'Pregunta: <?php //La pregunta ?>',
+          title: 'Pregunta: <?php echo $datos[0]->pregunta //La pregunta ?>',
           width: 900,
           legend: { position: 'none' },
-          chart: { title: 'Pregunta: <?php //La pregunta otra vez ?>',
+          chart: { title: 'Pregunta: <?php echo $datos[0]->pregunta//La pregunta otra vez ?>',
                    subtitle: '' },
           bars: 'horizontal', // Required for Material Bar Charts.
           axes: {

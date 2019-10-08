@@ -42,6 +42,21 @@ class PreguntasModel extends CI_Model{
         return $query->result();
     	}
 
+       public function get_votos($id)
+
+      {
+
+      //$this->db->select('SELECT * from pregunta_respuesta where idpregunta='.$id, FALSE);
+      
+        //$query=$this->db->get_where('pregunta_respuesta', array('idpregunta' => $id))->row();
+
+      $this->db->select('pregunta, respuesta, voto');
+      //$this->db->from('pregunta_respuesta');
+      $this->db->where('idpregunta='.$id);  
+      $query= $this->db->get("pregunta_respuesta"); 
+        return $query->result();
+      }
+
 
 
        public function find_pregunta($id)
