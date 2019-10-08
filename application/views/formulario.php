@@ -1,7 +1,7 @@
 <!DOCTYPE html>  
 <html lang="en">  
 <head>  
-    <meta charset="utf-8">  
+    <meta charset="utf8mb4">  
     <title>Página Cuestionario</title>  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -28,6 +28,7 @@
 
                                    <p></p>
                                 <?php 
+                                //print_r($preguntayrespuesta);
                                  //En este tramo van las respuestas
                                  $mas2=0;
                                  for($i=1;$i<(count($preguntayrespuesta)-1);$i++){
