@@ -1,5 +1,15 @@
 <?php  
-  
+ 
+ class Login_model extends CI_model{
+
+public function log_in_correctly($object){
+    $this->db->insert('usuario', $object);
+    return 0;
+
+}
+
+
+/*
 class Login_model extends CI_Model {  
   
     public function log_in_correctly() { 
@@ -20,7 +30,7 @@ class Login_model extends CI_Model {
 
         return $bandera;
   
-    }  
+    }  */
   
       
 }  
