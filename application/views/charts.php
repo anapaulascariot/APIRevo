@@ -40,5 +40,7 @@
   </head>
   <body>
     <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+    <div class="col-md-1 col-md-offset-7">
+                                    <button type="button" type="button" class="btn btn-danger" onclick="window.location.href='<?php echo base_url("index.php/Main/");?>'">Salir</button>
   </body>
 </html>
